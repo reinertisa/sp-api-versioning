@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class UserMapper {
 
     public UserDTOv1 toV1(User user) {
-        return new UserDTOv1(user.id(), user.name(), user.email());
+        return new UserDTOv1(user.id(), user.name(), user.email(), user.website());
     }
 
     public UserDTOv2 toV2(User user) {

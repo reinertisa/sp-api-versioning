@@ -28,6 +28,14 @@ public class UserController {
                 .collect(Collectors.toList());
     }
 
+    @GetMapping(value = "/users", version = "1.1")
+    public List<UserDTOv1>  findAllUser1_1() {
+        return userRepository.findAll()
+                .stream()
+                .map(userMapper::toV1)
+                .collect(Collectors.toList());
+    }
+
     @GetMapping(value = "/{version}/users", version = "2.0")
     public List<UserDTOv2> findAllUserV2() {
         return userRepository.findAll()
